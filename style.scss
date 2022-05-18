@@ -1,0 +1,224 @@
+// get the font famly from Google font.
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Macondo&family=Merriweather:wght@900&display=swap');
+
+// Create Variables
+$primary-font: 'Macondo', cursive;
+
+// crete style for all elmenets.
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $primary-font;
+}
+
+body {
+    color: white;
+    background-color: #18dcff;
+
+    .boat-animtion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+
+        .boat-animtion__title {
+            margin-bottom: 5rem;
+        }
+
+        .boat-animtion__box {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 21%, rgba(0,212,255,1) 100%);
+            height: 400px;
+            width: 600px;
+            position: relative;
+            inset: 0;
+            overflow: hidden;
+
+            // style for all img
+            img {
+                width: 100%;
+                position: absolute;
+            }
+
+            /* styling for  */
+            .stars-1 {
+                top: 0;
+                left: 20px;
+                z-index: 0;
+                animation: starFlach 2s linear infinite;
+
+            }
+            .stars-2 {
+                top: 0;
+                left: -20px;
+                z-index: 0;
+                animation: starFlach 2s linear infinite;
+                animation-delay: 1s;
+            }
+
+            /* styling for sea */
+            .sea-1 {
+                z-index: 9;
+                bottom: 50px;
+                left: 0;
+            }
+            .sea-1-2 {
+                z-index: 9;
+                bottom: 30px;
+                left: 0;
+                
+            }
+            /**/
+            .sea-2 {
+                width: 200%;
+                z-index: 11;
+                top: 82.5%;
+                left: 10%;
+                opacity: .8;
+                animation: sea-1-animtion 5s linear infinite;
+            }
+            .sea-3 {
+                width: 150%;
+                z-index: 11;
+                top: 82%;
+                left: 0%;
+                opacity: .8;
+                animation: sea-2-animtion 5s linear infinite;
+            }
+
+            /* styling for boat */
+            .boat {
+                width: 50%;
+                bottom: 60px;
+                left: 150px;                
+                z-index: 10;
+            }
+
+            /* styling for cloud */
+            .cloud {
+                right: 0;
+                transform: translateX(200px);
+            }
+            .cloud-1 {
+                z-index: 3;
+                width: 20%;
+                top: 90px;
+                opacity: .93;
+                
+                // animation 
+                animation: Cloud-1-animtion 10s linear infinite;
+                animation-delay: 6s;
+            }
+            .cloud-2 {
+                z-index: 1;
+                width: 20%;
+                top: 50px;
+                opacity: .9;
+
+                // animation 
+                animation: Cloud-1-animtion 10s linear infinite;
+                animation-delay: 4s;
+            }
+            .cloud-3 {
+                z-index: 2;
+                width: 30%;
+                top: 50px;
+                opacity: .9;
+                
+                // animation 
+                animation: Cloud-1-animtion 10s linear infinite;
+                animation-delay: .5s;
+            }
+            
+            .cloud-4-1,
+            .cloud-4-2,
+            .cloud-4-3 {
+                z-index: 0;
+                opacity: .7;
+            }
+            .cloud-4-1 {
+                width: 15%;
+                top: 30px;
+
+                // animation 
+                animation: Cloud-1-animtion 7s linear infinite;
+                animation-delay: 1s;
+            }
+            .cloud-4-2 {
+                width: 10%;
+                top: 200px;
+
+                // animation 
+                animation: Cloud-1-animtion 7s linear infinite;
+                animation-delay: 4s;
+            }
+            .cloud-4-3 {
+                width: 20%;
+                top: 120px;
+
+                // animation 
+                animation: Cloud-1-animtion 7s linear infinite;
+                animation-delay: 2s;
+            }
+        }
+    }
+}
+
+
+/* create keyfrem */
+
+    // animtion for stars.
+@keyframes starFlach {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+    // Animtion for cloud.
+@keyframes Cloud-1-animtion {
+    0% {
+        right: 0;
+        transform: translateX(200px);
+    }
+    100% {
+        right: 0;
+        transform: translateX(-600px);
+    }
+}
+
+
+    //  Animation for sea
+@keyframes sea-1-animtion {
+    0% {
+        transform: translateX(-100px);
+    }
+    50% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(-100px);
+    }
+}
+
+@keyframes sea-2-animtion {
+    0% {
+        transform: translateX(-50px);
+
+    }
+    50% {
+        transform: translateX(-100px);
+    }
+    100% {
+        transform: translateX(-50px);
+    }
+}
